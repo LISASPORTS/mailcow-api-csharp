@@ -1,0 +1,23 @@
+name: Release to NuGet
+
+on:
+  release:
+    types: [published]
+    
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v4
+    - name: Setup .NET SDK
+      uses: actions/setup-dotnet@v4
+    - id: get_version
+      uses: battila7/get-version-action@v2
+    - name: Build
+      run: dotnet build -c Release -p:Version=${{ steps.get_version.outputs.version-without-v }}
+    - name: Pack nugets
+      run: dotnet pack -c Release -p:Version=${{ steps.get_version.outputs.version-without-v }} --no-build --output .
+    - name: Push to NuGet
+      run: dotnet nuget push "*.nupkg" --api-key ${{secrets.nuget_api_key}} --source https://api.nuget.org/v3/index.json

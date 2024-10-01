@@ -2,6 +2,15 @@
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
+    <AssemblyName>LisaSports.MailcowApi</AssemblyName>
+    <PackageId>LisaSports.MailcowApi</PackageId>
+    <Company>LISA IE BV</Company>
+    <Copyright>No Copyright</Copyright>
+    <OutputType>Library</OutputType>
+    <RootNamespace>LisaSports.MailcowApi</RootNamespace>
+    <RepositoryUrl>https://github.com/LISASPORTS/mailcow-api-csharp</RepositoryUrl>
+    <RepositoryType>git</RepositoryType>
+    <PackageReleaseNotes>Minor update</PackageReleaseNotes>
   </PropertyGroup>
 
   <ItemGroup>
