@@ -10768,6 +10768,12 @@ namespace LisaSports.MailcowApi
         public string Host1 { get; set; }
 
         /// <summary>
+        /// the username of the mailbox
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("user1", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public string User1 { get; set; }
+
+        /// <summary>
         /// the smtp port of the target mail server
         /// </summary>
         [Newtonsoft.Json.JsonProperty("port1", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]

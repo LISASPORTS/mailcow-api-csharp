@@ -1528,6 +1528,9 @@ paths:
                 host1:
                   description: the smtp server where mails should be synced from
                   type: string
+                user1:
+                  description: the username of the mailbox
+                  type: string
                 port1:
                   description: the smtp port of the target mail server
                   type: string
